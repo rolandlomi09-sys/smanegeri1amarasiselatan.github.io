@@ -1,9 +1,9 @@
 /* ================= ROOT THEME ================= */
 :root {
     /* Palette yang lebih modern & seimbang */
-    --primary: #1e9964;
-    --primary-dark: #0c615a;
-    --secondary: #2edec7;
+    --primary: #1e3799;
+    --primary-dark: #0c2461;
+    --secondary: #2e86de;
     --accent: #feca57;
     --bg: #f8fafc; /* Lebih terang dan bersih */
     --surface: #ffffff;
