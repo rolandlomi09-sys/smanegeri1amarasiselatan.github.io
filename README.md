@@ -1,0 +1,1 @@
+# smanegeri1amarasiselatan.github.io
