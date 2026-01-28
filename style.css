@@ -1,0 +1,203 @@
+/* ================= ROOT THEME ================= */
+:root {
+    /* Palette yang lebih modern & seimbang */
+    --primary: #1e9964;
+    --primary-dark: #0c615a;
+    --secondary: #2edec7;
+    --accent: #feca57;
+    --bg: #f8fafc; /* Lebih terang dan bersih */
+    --surface: #ffffff;
+    --text-main: #1e293b; /* Slate 800 */
+    --text-muted: #64748b; /* Slate 500 */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ================= GLOBAL ================= */
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', 'Poppins', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* ================= HEADER ================= */
+header {
+    background: radial-gradient(circle at top right, var(--secondary), var(--primary-dark));
+    color: #fff;
+    padding: 100px 20px 80px;
+    text-align: center;
+    clip-path: ellipse(150% 100% at 50% 0%); /* Efek lengkung halus di bawah */
+}
+
+header h1 {
+    margin: 0;
+    font-size: clamp(2.5rem, 5vw, 3.5rem); /* Ukuran font responsif */
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+header p {
+    margin: 20px auto 0;
+    max-width: 600px;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 300;
+}
+
+/* ================= NAVBAR ================= */
+nav {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    opacity: 0.7;
+}
+
+nav a:hover {
+    color: var(--primary);
+    opacity: 1;
+}
+
+/* Indikator aktif yang lebih elegan */
+nav a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: var(--transition);
+    margin: 4px auto 0;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ================= SECTION (CARD) ================= */
+section {
+    background: var(--surface);
+    max-width: 900px; /* Lebar yang lebih terbaca untuk teks */
+    margin: -40px auto 60px; /* Mengangkat card sedikit ke atas header */
+    padding: 50px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    position: relative;
+}
+
+section h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Garis dekoratif samping judul */
+section h2::before {
+    content: "";
+    width: 4px;
+    height: 28px;
+    background: var(--secondary);
+    border-radius: var(--radius-sm);
+}
+
+section p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+}
+
+/* ================= LIST ================= */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    background: #f1f5f9;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+}
+
+ul li:hover {
+    transform: translateX(8px);
+    background: #e2e8f0;
+}
+
+/* Icon bullet custom */
+ul li::before {
+    content: "✓";
+    color: var(--secondary);
+    font-weight: bold;
+    margin-right: 12px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: var(--primary-dark);
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 100px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    opacity: 0.7;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    header {
+        padding: 80px 20px 60px;
+    }
+
+    nav {
+        gap: 20px;
+    }
+
+    section {
+        margin: -30px 20px 40px;
+        padding: 30px 20px;
+    }
+}
